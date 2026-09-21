@@ -29,16 +29,50 @@
     <h1 class="page-title">Design</h1>
   </section>
 
-  <section id="awards" class="section" style="border-top: none;">
-    <h2 class="section-title">Awards &amp; Recognition</h2>
-    <ul class="simple-list">
-      <li>Red Dot Design Award 2024 — "Safie" (Design Concept)</li>
-      <li>Red Dot Design Award 2024 — "Lumivita" (Design Concept)</li>
-      <li>Red Dot Design Award 2024 — "Respa Chips" (Design Concept)</li>
-      <li>IDSA Award 2023 — "SAFEUP" (Design Concept)</li>
-      <li>iF Design Award 2021 — "TOQUE: Covid-19 Pass Box" (Professional Concept)</li>
-      <li>A' Design Award 2019 — "Connected Walker"</li>
-    </ul>
+  <section id="personal-projects" class="section" style="border-top: none;">
+    <h2 class="section-title">Personal Projects</h2>
+    <div class="projects-grid">
+      <article class="project-card">
+        <img src="images/project-diffo.jpg" alt="Diffo" class="project-thumb">
+        <h3 class="project-name">Diffo</h3>
+        <p class="project-year">2021</p>
+        <a href="https://youtu.be/zaWkpXgvsxM" class="project-link" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </article>
+      <article class="project-card">
+        <img src="images/project-putton.jpg" alt="Putton" class="project-thumb">
+        <h3 class="project-name">Putton</h3>
+        <p class="project-year">2020</p>
+        <a href="https://www.youtube.com/watch?v=tWk-JshpuY8" class="project-link" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </article>
+      <article class="project-card">
+        <img src="images/project-a-tempo.jpg" alt="a tempo" class="project-thumb">
+        <h3 class="project-name">a tempo</h3>
+        <p class="project-year">2019</p>
+        <a href="https://www.youtube.com/watch?v=8b5OpJaHWi8" class="project-link" target="_blank" rel="noopener">Watch on YouTube →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="awards" class="section">
+    <h2 class="section-title">Awards</h2>
+    <div class="awards-layout">
+      <div class="carousel">
+        <button type="button" class="carousel-btn carousel-prev" aria-label="Previous award image">&larr;</button>
+        <div class="carousel-frame">
+          <img src="images/award-safie.jpg" alt="Red Dot Design Award 2024 — Safie" class="carousel-img" id="awardImg">
+          <p class="carousel-counter" id="awardCounter">1 / 5</p>
+        </div>
+        <button type="button" class="carousel-btn carousel-next" aria-label="Next award image">&rarr;</button>
+      </div>
+      <ul class="simple-list">
+        <li>Red Dot Design Award 2024 — "Safie" (Design Concept)</li>
+        <li>Red Dot Design Award 2024 — "Lumivita" (Design Concept)</li>
+        <li>Red Dot Design Award 2024 — "Respa Chips" (Design Concept)</li>
+        <li>IDSA Award 2023 — "SAFEUP" (Design Concept)</li>
+        <li>iF Design Award 2021 — "TOQUE: Covid-19 Pass Box" (Professional Concept)</li>
+        <li>A' Design Award 2019 — "Connected Walker"</li>
+      </ul>
+    </div>
   </section>
 
   <section id="patents" class="section">
@@ -55,6 +89,37 @@
 <footer class="footer">
   <p>&copy; 2026 Nari Kim. All rights reserved.</p>
 </footer>
+
+<script>
+  (function () {
+    var images = [
+      { src: "images/award-safie.jpg", alt: "Red Dot Design Award 2024 — Safie" },
+      { src: "images/award-lumivita.jpg", alt: "Red Dot Design Award 2024 — Lumivita" },
+      { src: "images/award-respa-chips.jpg", alt: "Red Dot Design Award 2024 — Respa Chips" },
+      { src: "images/award-safeup.jpg", alt: "IDSA Award 2023 — SAFEUP" },
+      { src: "images/award-toque.jpg", alt: "iF Design Award 2021 — TOQUE" }
+    ];
+    var index = 0;
+    var imgEl = document.getElementById("awardImg");
+    var counterEl = document.getElementById("awardCounter");
+
+    function render() {
+      imgEl.src = images[index].src;
+      imgEl.alt = images[index].alt;
+      counterEl.textContent = (index + 1) + " / " + images.length;
+    }
+
+    document.querySelector(".carousel-prev").addEventListener("click", function () {
+      index = (index - 1 + images.length) % images.length;
+      render();
+    });
+
+    document.querySelector(".carousel-next").addEventListener("click", function () {
+      index = (index + 1) % images.length;
+      render();
+    });
+  })();
+</script>
 
 </body>
 </html>
