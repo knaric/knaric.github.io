@@ -117,12 +117,17 @@ ul {
   flex-shrink: 0;
 }
 
-.hero-photo-img {
+.hero-photo-img,
+.hero-photo-box {
   width: 280px;
   height: 280px;
   object-fit: cover;
   border-radius: 16px;
   border: 1px solid var(--color-border);
+}
+
+.hero-photo-box {
+  background: var(--color-bg);
 }
 
 .hero-eyebrow {
@@ -460,7 +465,8 @@ ul {
     text-align: center;
     gap: 2rem;
   }
-  .hero-photo-img {
+  .hero-photo-img,
+  .hero-photo-box {
     width: 200px;
     height: 200px;
   }
